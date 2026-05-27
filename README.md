@@ -4,11 +4,11 @@
 PASSWORD CRACKING REPORT
 ============================================================
 
-**Student Name:** [HARI KRISHNA]
+**Student Name:** [Your Full Name]
 
-**Course:** [COMPUTER SCIENCE]
+**Course:** [Course Name]
 
-**Date:** [27/05/2026]
+**Date:** [Today's Date]
 
 **Authorization:** I confirm I have explicit permission to perform this penetration testing exercise on the target system/hash provided.
 
@@ -77,12 +77,37 @@ Record any contextual notes about the password (derived from user metadata or re
 
 ## 5. Evidence and Screenshots
 
-Include screenshots or terminal exports showing the tool runs and the final results. Recommended captures:
-- Tool invocation showing target and wordlist selection (redacted of any sensitive system identifiers).
-- Final output showing the cracked password or the verification output indicating failure to recover the secret.
-- Environment snapshot (tool versions and system GPU/CPU details).
+Include screenshots or terminal exports showing the tool runs and the final results. To keep the repository safe for sharing, add sanitized images (no real credentials or production identifiers).
 
-In a public repository, redact any sensitive data and replace with placeholders or annotated screenshots that do not reveal production credentials.
+Recommended image files (place in a `screenshots/` folder at the repository root):
+
+- `screenshots/hashcat_run.png` — terminal showing the Hashcat dictionary attack in progress (command invocation).
+- `screenshots/hashcat_show.png` — terminal showing the `hashcat --show` output with the cracked password (or verification output).
+- `screenshots/john_show.png` — terminal showing `john --show` output (if John the Ripper was used).
+- `screenshots/env_snapshot.png` — system/tool versions and environment details (GPU/CPU, `hashcat --version`, `john --version`).
+
+Embedded images (example markdown):
+
+![Hashcat running](screenshots/hashcat_run.png)
+
+![Hashcat --show output](screenshots/hashcat_show.png)
+
+![John the Ripper --show output](screenshots/john_show.png)
+
+![Environment snapshot](screenshots/env_snapshot.png)
+
+If you prefer not to add image files to the repository, paste terminal outputs as redacted text blocks instead. Example (redact any identifying data):
+
+```
+# Example: hashcat command (redact user/host)
+# hashcat -m 0 -a 0 hashcat_target.txt /usr/share/wordlists/rockyou.txt
+# ...running...
+
+# Example: hashcat --show output (redact hashes if needed)
+# f25a2fc72690b780b2a14e95ef2fcf8d:iloveyou
+```
+
+Guidance: before committing screenshots to a public repo, ensure all sensitive values (hashes tied to real accounts, hostnames, or user identifiers) are removed or replaced with placeholders.
 
 ---
 
